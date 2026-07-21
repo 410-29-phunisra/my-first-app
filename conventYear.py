@@ -3,4 +3,4 @@ gp.title("แอปพลิเคชั่นแปลงปี พ.ศ. เป
 
 tn_year=gp.number_input("กรอกปี พ.ศ. ที่ต้องการแปลง",value=2569)
 ab_year=tn_year-543
-gp.header(f"ปี ค.ศ. คือ : {ab_yaer}")
+gp.header(f"ปี ค.ศ. คือ : {ab_year}")
