@@ -21,8 +21,8 @@ if st.button("คลิกบอกความรู้สึกกับกา
 st.write("กรอกสินค้าที่คุณต้องการ")
 
 #ส่วนที่ 2 สร้างช่องรับเมนูอาหาร และ เครื่องดื่ม
-Menu = st.text_input("กรอกสินค้าที่คุณต้องการ:", min_value=1.0, value=1.0)
-Menu = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", min_value=1.0, value=1.0)
+Menu = st.text_input("กรอกสินค้าที่คุณต้องการ:", value=st.session_state)
+Menu = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", value=st.session_state)
 
 #ส่วนที่ 3 สร้างปุ่มกดคำนวณ
 if st.button("คำนวณค่า BMI ▶️"):
