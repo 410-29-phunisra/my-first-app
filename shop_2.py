@@ -21,8 +21,21 @@ if st.button("คลิกบอกความรู้สึกกับกา
 st.write("กรอกสินค้าที่คุณต้องการ")
 
 #ส่วนที่ 2 สร้างช่องรับเมนูอาหาร และ เครื่องดื่ม
-Menu = st.text_input("กรอกสินค้าที่คุณต้องการ:", value=st.session_state)
-Menu = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", value=st.session_state)
+Menu_1 = st.text_input("กรอกสินค้าที่คุณต้องการ:", value=st.session_state)
+Menu_2 = st.text_input("กรอกสินค้าที่คุณต้องการ:", value=st.session_state)
+Menu_3 = st.text_input("กรอกสินค้าที่คุณต้องการ:", value=st.session_state)
+Menu_4 = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", value=st.session_state)
+Menu_5 = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", value=st.session_state)
+Menu_6 = st.text_input("กรอกเครื่องดื่มที่คุณต้องการ:", value=st.session_state)
+
+#ส่วนที่ 3 คำนวณราคาสินค้า
+price = st.text_input("กรอกสินค้า:", value=0.0)
+text = price
+net_price = price - vat
+st.header(f"• ภาษีมูลค่าเพิ่ม (VAT 7%): **{vat:.2f}** บาท")
+st.header(f"• ราคาสุทธิ: {net_price:.2f} บาท")
+st.divider()
+st.write("นางสาวภูณิสรา เตชะสืบ เลขที่ 29  ม.4/10")
 
 #ส่วนที่ 3 สร้างปุ่มกดคำนวณ
 if st.button("คำนวณค่าสินค้า"):
