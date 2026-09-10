@@ -1,9 +1,31 @@
 import streamlit as st
-st.title("ร้านหมีเบเกอร์ร่า")
-price = st.number_input("กรอกราคาสินค้า (บาท):", value=0.0)
-vat = price * 0.07
-net_price = price - vat
-st.header(f"• ภาษีมูลค่าเพิ่ม (VAT 7%): **{vat:.2f}** บาท")
-st.header(f"• ราคาสุทธิ: {net_price:.2f} บาท")
+
+#ส่วนที่ 1 หัวข้อหน้าเว็บ (Title สีฟ้า)
+st.markdown("# :blue[ร้านหมีเบเกอร์ร่า]")
+st.write("กรอกสินค้าที่คุณต้องการ")
+
+#ส่วนที่ 2 สร้างช่องรับเมนูอาหาร และ เครื่องดื่ม
+weight = st.number_input("กรอกน้ำหนักของคุณ (กิโลกรัม):", min_value=1.0, value=1.0)
+height_cm = st.number_input("กรอกส่วนสูงของคุณ (เซนติเมตร):", min_value=1.0, value=1.0)
+
+#ส่วนที่ 3 สร้างปุ่มกดคำนวณ
+if st.button("คำนวณค่า BMI ▶️"):
+    #แปลงส่วนสูงจาก cm เป้น เมตร แล้วคำนวณ BMI
+    height_m = height_cm / 100
+    bmi = weight / (height_m ** 2)
+
+    st.write("---")
+    st.header(f"ค่า BMI ของคุณคือ: **{bmi :.2f}**")
+
+#ส่วนที่ 4 แปลผลค่า BMI ตามเกณฑ์
+if bmi < 18.5:
+      st.warning("🚨 คุณมีน้ำหนักน้อยกว่าเกณฑ์ (ผอม)")
+elif 18.5 <= bmi < 23.0:
+      st.success("💪 คุณมีน้ำหนักอยู่ในเกณฑ์ปกติ (สุขภาพดี)")
+elif 23.0 <= bmi < 25.0:
+      st.info("🔍 คุณเริ่มมีน้ำหนักเกินเกณฑ์ (ท้วม)")
+else:
+      st.error("⚠️ คุณอยู่ในเกณฑ์อ้วน ควรระวังเรื่องสุขภาพและออกกำลังกาย")
+
 st.divider()
-st.write("กลุ่มที่ 2")
+st.write("นางสาวภูณิสรา เตชะสืบ เลขที่ 29 ม.4/10")
